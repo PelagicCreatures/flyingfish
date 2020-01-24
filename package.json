@@ -1,6 +1,6 @@
 {
 	"name": "@pelagiccreatures/flyingfish",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Sargasso Lazy Loading Images",
 	"main": "index.js",
 	"scripts": {
