@@ -31,14 +31,14 @@
 **/
 
 class FlyingFish extends Sargasso {
-	constructor(element, options = {}) {
+	constructor (element, options = {}) {
 		super(element, {
 			watchViewport: true
 		})
 		this.triggered = false
 	}
 
-	enterViewport() {
+	enterViewport () {
 		if (!this.triggered) {
 			this.triggered = true
 
@@ -65,15 +65,14 @@ class FlyingFish extends Sargasso {
 	}
 
 	// we got a message back from a worker
-	workerOnMessage(id, data) {
+	workerOnMessage (id, data) {
 		if (id === 'FlyingFish') {
 			if (data.uid === this.uid) {
 				this.blobURL = URL.createObjectURL(data.blob)
 				const frame = () => {
-					if (this.element.tagName === 'img') {
+					if (this.element.tagName === 'IMG') {
 						this.element.setAttribute('src', this.blobURL)
-					}
-					else {
+					} else {
 						this.element.style.backgroundImage = 'url(' + this.blobURL + ')'
 					}
 					this.sleep() // We're done. That was easy.
@@ -84,7 +83,7 @@ class FlyingFish extends Sargasso {
 		super.workerOnMessage(id, data)
 	}
 
-	destroy() {
+	destroy () {
 		if (this.blobURL) {
 			URL.revokeObjectURL(this.blobURL)
 		}
