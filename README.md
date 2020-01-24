@@ -19,8 +19,15 @@ npm install @PelagicCreatures/Sargasso
 npm install @PelagicCreatures/FlyingFish
 ```
 
-HTML:
+Quick HTML example using CDN:
 ```html
+<style>
+	.my-container { width: 30vw; height: 30vh; }
+	.my-responsive-image {
+		width:100%; height:100%; background-size: contain; background-repeat: no-repeat; background-position: center center;
+	}
+</style>
+
 <script type='module' src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/sargasso/dist/sargasso.es.js'></script>
 <script type="module" src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/flyingfish/dist/flyingfish.es.js'></script>
 <script type='module'>
@@ -34,13 +41,4 @@ HTML:
 </div>
 ```
 
-CSS:
-```css
-.my-container { width: 30vw; height: 30vh; }
-.my-responsive-image {
-	width:100%; height:100%; background-size: contain; background-repeat: no-repeat; background-position: center center;
-}
-```
-
-To make image crop to fill the frame use:
-	background-size: cover;
+To make image crop to fill the frame use: `background-size: cover;`
