@@ -1,0 +1,25 @@
+{
+	"name": "@pelagiccreatures/flyingfish",
+	"version": "0.0.1",
+	"description": "Sargasso Lazy Loading Images",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "rollup -c rollup.config.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/PelagicCreatures/flyingfish.git"
+	},
+	"author": "Michael Rhodes",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/PelagicCreatures/flyingfish/issues"
+	},
+	"homepage": "https://github.com/PelagicCreatures/flyingfish#readme",
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^11.0.1",
+		"@rollup/plugin-json": "^4.0.1",
+		"@rollup/plugin-node-resolve": "^7.0.0"
+	}
+}
