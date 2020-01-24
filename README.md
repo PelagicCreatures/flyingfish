@@ -14,12 +14,23 @@ The image is not loaded until visible in viewport
 
 This class can be used on an IMG tag or any container that supports background-image style, usually a div.
 
+```
+npm install @PelagicCreatures/Sargasso
+npm install @PelagicCreatures/FlyingFish
+```
+
 HTML:
 ```html
+<script type='module' src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/sargasso/dist/sargasso.es.js'></script>
+<script type="module" src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/flyingfish/dist/flyingfish.es.js'></script>
+<script type='module'>
+	bootSargasso()
+</script>
+
 <img data-sargasso-class="FlyingFish" data-src="/path-to-image.jpg">
 
 <div class="my-container">
-	div class="my-responsive-image" data-sargasso-class="FlyingFish" data-src="/path-to-image.jpg"></div>
+	<div class="my-responsive-image" data-sargasso-class="FlyingFish" data-src="/path-to-image.jpg"></div>
 </div>
 ```
 
