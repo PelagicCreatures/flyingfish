@@ -6,14 +6,15 @@
 
 Sargasso class that implements lazy loaded images using background-image css properties which always fits image within its container's dimensions or the src attribute on an IMG tag. Image is loaded in a web worker and the DOM is updated in an Animation Frame for optimal performance.
 
+```
 @author Michael Rhodes
 @license MIT
 Made in Barbados 🇧🇧 Copyright © 2020 Michael Rhodes
+```
 
-The image is not loaded until visible in viewport
+The FlyingFish Sargasso class can be used on an IMG tag or any container that supports background-image style, usually a div.
 
-This class can be used on an IMG tag or any container that supports background-image style, usually a div.
-
+Install in your project
 ```
 npm install @PelagicCreatures/Sargasso
 npm install @PelagicCreatures/FlyingFish
