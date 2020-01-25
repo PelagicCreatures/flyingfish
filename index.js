@@ -44,8 +44,9 @@ class FlyingFish extends Sargasso {
 
 			const offload = `onmessage = async (e) => {
 			  const response = await fetch(e.data.url)
+				const contentType = response.headers.get('content-type');
 			  const blob = await response.blob()
-			  self.postMessage({ uid: e.data.uid, blob: blob })
+			  self.postMessage({ uid: e.data.uid, blob: blob, contentType: contentType})
 			}`
 
 			this.workerStart('FlyingFish', offload)
@@ -67,18 +68,16 @@ class FlyingFish extends Sargasso {
 	// we got a message back from a worker
 	workerOnMessage (id, data) {
 		if (id === 'FlyingFish') {
-			if (data.uid === this.uid) {
-				this.blobURL = URL.createObjectURL(data.blob)
-				const frame = () => {
-					if (this.element.tagName === 'IMG') {
-						this.element.setAttribute('src', this.blobURL)
-					} else {
-						this.element.style.backgroundImage = 'url(' + this.blobURL + ')'
-					}
-					this.sleep() // We're done. That was easy.
+			this.blobURL = URL.createObjectURL(data.blob)
+			const frame = () => {
+				if (this.element.tagName === 'IMG') {
+					this.element.setAttribute('src', this.blobURL)
+				} else {
+					this.element.style.backgroundImage = 'url(' + this.blobURL + ')'
 				}
-				this.queueFrame(frame)
+				this.sleep() // We're done. That was easy.
 			}
+			this.queueFrame(frame)
 		}
 		super.workerOnMessage(id, data)
 	}
