@@ -17,6 +17,9 @@
 		"url": "https://github.com/PelagicCreatures/flyingfish/issues"
 	},
 	"homepage": "https://github.com/PelagicCreatures/flyingfish#readme",
+	"dependencies": {
+		"@pelagiccreatures/sargasso": "^0.7.0"
+	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^11.0.1",
 		"@rollup/plugin-json": "^4.0.1",
