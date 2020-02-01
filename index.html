@@ -1,14 +1,19 @@
+<html>
+<head>
 <style>
     .my-container { width: 30vw; height: 30vh; }
     .my-responsive-image {
         width:100%; height:100%; background-size: contain; background-repeat: no-repeat; background-position: center center;
     }
 </style>
+</head>
+<body>
 
-<script type='module' src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/sargasso/dist/sargasso.es.js'></script>
-<script type="module" src='./index.js'></script>
-<script type='module'>
-    bootSargasso()
+<!-- <script type='module' src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/sargasso/dist/sargasso.iife.js'></script> -->
+<script src='dist/sargasso.iife.js'></script>
+<script src='dist/flyingfish.iife.js' defer></script>
+<script defer>
+    PelagicCreatures.Sargasso.utils.bootSargasso()
 </script>
 
 <pre>
@@ -118,3 +123,5 @@
 <div class="my-container">
     <div class="my-responsive-image" data-sargasso-class="FlyingFish" data-src="test.jpg"></div>
 </div>
+</body>
+</html>
