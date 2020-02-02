@@ -1,8 +1,8 @@
 this.PelagicCreatures = this.PelagicCreatures || {};
-this.PelagicCreatures.FlyingFish = (function (exports, Sargasso) {
+this.PelagicCreatures.FlyingFish = (function (exports, sargasso) {
 	'use strict';
 
-	class FlyingFish extends Sargasso.Sargasso {
+	class FlyingFish extends sargasso.Sargasso {
 		constructor (element, options = {}) {
 			super(element, {
 				watchViewport: true
@@ -62,7 +62,7 @@ this.PelagicCreatures.FlyingFish = (function (exports, Sargasso) {
 		}
 	}
 
-	Sargasso.utils.registerSargassoClass('FlyingFish', FlyingFish);
+	sargasso.utils.registerSargassoClass('FlyingFish', FlyingFish);
 
 	exports.FlyingFish = FlyingFish;
 
