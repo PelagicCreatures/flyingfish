@@ -18,7 +18,7 @@
 	},
 	"homepage": "https://github.com/PelagicCreatures/flyingfish#readme",
 	"peerDependencies": {
-		"@pelagiccreatures/sargasso": "^0.8.1"
+		"@pelagiccreatures/sargasso": "^0.8.5"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^11.0.1",
