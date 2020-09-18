@@ -18,19 +18,19 @@
 	},
 	"homepage": "https://github.com/PelagicCreatures/flyingfish#readme",
 	"peerDependencies": {
-		"@pelagiccreatures/sargasso": "^0.9.4"
+		"@pelagiccreatures/sargasso": "^0.10.0"
 	},
 	"devDependencies": {
-		"rollup": "^2.22.1",
-		"@rollup/plugin-commonjs": "^14.0.0",
+		"@rollup/plugin-commonjs": "^15.0.0",
 		"@rollup/plugin-json": "^4.1.0",
-		"@rollup/plugin-node-resolve": "^8.4.0",
-		"eslint": "^7.5.0",
+		"@rollup/plugin-node-resolve": "^9.0.0",
+		"eslint": "^7.9.0",
 		"eslint-config-standard": "^14.1.1",
 		"eslint-plugin-import": "^2.22.0",
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-standard": "^4.0.1"
+		"eslint-plugin-standard": "^4.0.1",
+		"rollup": "^2.27.1"
 	},
 	"dependencies": {}
 }
