@@ -49,7 +49,7 @@ Quick HTML example using CDN:
 </div>
 ```
 
-### serve modules from your project in production
+### Production: serve modules from your project
 ```
 npm install @PelagicCreatures/Sargasso
 npm install @PelagicCreatures/FlyingFish
@@ -90,9 +90,12 @@ export {
 
 html
 ```
-window.onload=  function() {
-  App.boot()
-}
+<script src="/dist/js/userapp.iife.js" defer>
+<script defer>
+  window.onload=  function() {
+    App.boot()
+  }
+</script>
 ```
 
 #### Create a rollup config file
@@ -115,7 +118,7 @@ export default {
 	output: {
 		format: 'iife',
 		file: 'public/dist/js/userapp.iife.js', // <<< where to save the browser bundle
-		name: 'App', // <<< where app.js exports are exposed
+		name: 'App', // <<< global variable where app.js exports are exposed
     sourcemap: true,
 		compact: true
 	},
