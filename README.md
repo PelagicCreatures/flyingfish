@@ -1,4 +1,4 @@
-# @PelagicCreatures/FlyingFish
+# @pelagiccreatures/flyingfish
 
 ### Sargasso supervised Lazy Loaded Images
 
@@ -51,8 +51,8 @@ Quick HTML example using CDN:
 
 ### Serving modules from your project
 ```
-npm install @PelagicCreatures/Sargasso
-npm install @PelagicCreatures/FlyingFish
+npm install @pelagiccreatures/sargasso --save-dev
+npm install @pelagiccreatures/flyingfish --save-dev
 ```
 
 You can use the .iife.js bundles in the /dist directory of the \@PelagicCreatures modules by copying them to a public directory on your server and referencing them in script tags in your html.
@@ -71,13 +71,14 @@ npm install rollup --save-dev
 npm install @rollup/plugin-json --save-dev
 npm install @rollup/plugin-commonjs --save-dev
 npm install @rollup/plugin-node-resolve --save-dev
+npm install rollup-plugin-terser --save-dev
 ```
 
 app.js
-```
+```javascript
 import { Sargasso, utils, loadPageHandler } from '@pelagiccreatures/sargasso'
 
-import { FlyingFish } '@pelagiccreatures/flyingfish'
+import { FlyingFish } from '@pelagiccreatures/flyingfish'
 
 const boot = () => {
   utils.bootSargasso({})
@@ -89,55 +90,60 @@ export {
 ```
 
 html
-```
-<script src="/dist/js/userapp.iife.js" defer>
-<script defer>
-  window.onload=  function() {
-    App.boot()
-  }
-</script>
+```html
+<!DOCTYPE html>
+  <body>
+    <img data-jsclass="FlyingFish" data-src="/some-image.jpg">
+    <script src="public/dist/js/userapp.iife.js" defer></script>
+    <script defer>
+      window.onload= () => {
+        App.boot()
+      }
+    </script>
+  </body>
+</html>
 ```
 
 #### Create a rollup config file
 Set input and output ass needed.
 
 rollup.config.js
-```
+```javascript
 import commonjs from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
 
 import {
-	terser
+  terser
 }
-	from 'rollup-plugin-terser'
+  from 'rollup-plugin-terser'
 
 export default {
-	input: './app.js', // <<< location of your es6 code
+  input: './app.js', // <<< location of your es6 code
 
-	output: {
-		format: 'iife',
-		file: 'public/dist/js/userapp.iife.js', // <<< where to save the browser bundle
-		name: 'App', // <<< global variable where app.js exports are exposed
+  output: {
+    format: 'iife',
+    file: 'public/dist/js/userapp.iife.js', // <<< where to save the browser bundle
+    name: 'App', // <<< global variable where app.js exports are exposed
     sourcemap: true,
-		compact: true
-	},
+    compact: true
+  },
 
-	plugins: [
-		json(),
-		commonjs({}),
-		nodeResolve({
-			preferBuiltins: false,
-			dedupe: (dep) => {
-				return dep.match(/^(@pelagiccreatures|lodash|js-cookie)/)
-			}
-		}),
-		terser({
-			output: {
-				comments: false
-			}
-		})
-	]
+  plugins: [
+    json(),
+    commonjs({}),
+    nodeResolve({
+      preferBuiltins: false,
+      dedupe: (dep) => {
+        return dep.match(/^(@pelagiccreatures|lodash|js-cookie)/)
+      }
+    }),
+    terser({
+      output: {
+        comments: false
+      }
+    })
+  ]
 }
 ```
 
