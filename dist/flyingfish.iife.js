@@ -15,10 +15,10 @@ this.PelagicCreatures.FlyingFish = (function (exports, sargasso) {
 				this.triggered = true;
 
 				const offload = `onmessage = async (e) => {
-			  const response = await fetch(e.data.url)
+				const response = await fetch(e.data.url)
 				const contentType = response.headers.get('content-type');
-			  const blob = await response.blob()
-			  self.postMessage({ uid: e.data.uid, blob: blob, contentType: contentType})
+				const blob = await response.blob()
+				self.postMessage({ uid: e.data.uid, blob: blob, contentType: contentType})
 			}`;
 
 				this.workerStart('FlyingFish', offload);
@@ -47,6 +47,7 @@ this.PelagicCreatures.FlyingFish = (function (exports, sargasso) {
 					} else {
 						this.element.style.backgroundImage = 'url(' + this.blobURL + ')';
 					}
+					this.addClass('flying-fish-loaded');
 					this.sleep(); // We're done. That was easy.
 				};
 				this.queueFrame(frame);

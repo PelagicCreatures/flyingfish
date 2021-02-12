@@ -1,126 +1,139 @@
 <html>
 <head>
 <style>
-    .my-container { width: 30vw; height: 30vh; }
-    .my-responsive-image {
-        width:100%; height:100%; background-size: contain; background-repeat: no-repeat; background-position: center center;
-    }
+  .my-container { width: 30vw; height: 30vh; }
+
+  .my-responsive-image {
+    width:100%; height:100%; background-size: contain; background-repeat: no-repeat; background-position: center center;
+  }
+
+  .flying-fish { opacity:0; transition: opacity .3s; background: linear-gradient(#eee, #fff); }
+
+  .flying-fish-loaded { opacity: 1; }
+
 </style>
 </head>
 <body>
 
 <script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/sargasso/dist/sargasso.iife.js'></script>
-<script src='dist/flyingfish.iife.js' defer></script>
+<script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/flyingfish/dist/flyingfish.iife.js'></script>
 <script defer>
-    PelagicCreatures.Sargasso.utils.bootSargasso()
+  PelagicCreatures.Sargasso.utils.bootSargasso()
 </script>
 
+<h3>FlyingFish - Sargasso component implementing lazy loaded images.</h3>
+
+<p>Scroll down to load image</p>
+
 <pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
 </pre>
 
-<img data-sargasso-class="FlyingFish" data-src="test.jpg">
+<img data-sargasso-class="FlyingFish" data-src="test.jpg" class="flying-fish">
 
 <pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
+  v
 </pre>
 
 <div class="my-container">
-    <div class="my-responsive-image" data-sargasso-class="FlyingFish" data-src="test.jpg"></div>
+  <div class="my-responsive-image flying-fish" data-sargasso-class="FlyingFish" data-src="test.jpg"></div>
 </div>
+
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+</pre>
 </body>
 </html>
