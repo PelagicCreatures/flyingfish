@@ -14,12 +14,6 @@ Made in Barbados 🇧🇧 Copyright © 2020 Michael Rhodes
 
 The FlyingFish Sargasso class can be used on an IMG tag or any container that supports background-image style, usually a div.
 
-Install in your project
-```
-npm install @PelagicCreatures/Sargasso
-npm install @PelagicCreatures/FlyingFish
-```
-
 Quick HTML example using CDN:
 ```html
 <style>
@@ -53,4 +47,98 @@ Quick HTML example using CDN:
 <div class="my-container">
   <div class="my-responsive-image flying-fish" data-sargasso-class="FlyingFish" data-src="/path-to-image.jpg"></div>
 </div>
+```
+
+### serve modules from your project in production
+```
+npm install @PelagicCreatures/Sargasso
+npm install @PelagicCreatures/FlyingFish
+```
+
+You can use the .iife.js bundles in the /dist directory of the \@PelagicCreatures modules by copying them to a public directory on your server and referencing them in script tags in your html.
+```
+node_modules/@PelagicCreatures/Sargasso/dist/sargasso.iife.js
+node_modules/@PelagicCreatures/FlyingFish/dist/flyingfish.iife.js
+```
+
+-or-
+
+You can also bundle sargasso modules with your own es6 code using rollup.
+
+```
+npm install npx -g
+npm install rollup --save-dev
+npm install @rollup/plugin-json --save-dev
+npm install @rollup/plugin-commonjs --save-dev
+npm install @rollup/plugin-node-resolve --save-dev
+```
+
+app.js
+```
+import { Sargasso, utils, loadPageHandler } from '@pelagiccreatures/sargasso'
+
+import { FlyingFish } '@pelagiccreatures/flyingfish'
+
+const boot = () => {
+  utils.bootSargasso({})
+}
+
+export {
+  boot
+}
+```
+
+html
+```
+window.onload=  function() {
+  App.boot()
+}
+```
+
+#### Create a rollup config file
+Set input and output ass needed.
+
+rollup.config.js
+```
+import commonjs from '@rollup/plugin-commonjs'
+import nodeResolve from '@rollup/plugin-node-resolve'
+import json from '@rollup/plugin-json'
+
+import {
+	terser
+}
+	from 'rollup-plugin-terser'
+
+export default {
+	input: './app.js', // <<< location of your es6 code
+
+	output: {
+		format: 'iife',
+		file: 'public/dist/js/userapp.iife.js', // <<< where to save the browser bundle
+		name: 'App', // <<< where app.js exports are exposed
+    sourcemap: true,
+		compact: true
+	},
+
+	plugins: [
+		json(),
+		commonjs({}),
+		nodeResolve({
+			preferBuiltins: false,
+			dedupe: (dep) => {
+				return dep.match(/^(@pelagiccreatures|lodash|js-cookie)/)
+			}
+		}),
+		terser({
+			output: {
+				comments: false
+			}
+		})
+	]
+}
+```
+
+Make the bundle
+```
+npx rollup --no-treeshake --no-freeze -c rollup.config.js
 ```
