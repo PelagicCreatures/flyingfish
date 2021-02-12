@@ -2,6 +2,8 @@ this.PelagicCreatures = this.PelagicCreatures || {};
 this.PelagicCreatures.FlyingFish = (function (exports, sargasso) {
 	'use strict';
 
+	/* 	Made in Barbados 🇧🇧 Copyright © 2020-2021 Michael Rhodes */
+
 	class FlyingFish extends sargasso.Sargasso {
 		constructor (element, options = {}) {
 			super(element, {
@@ -73,7 +75,7 @@ this.PelagicCreatures.FlyingFish = (function (exports, sargasso) {
 
 		@author Michael Rhodes
 		@license MIT
-		Made in Barbados 🇧🇧 Copyright © 2020 Michael Rhodes
+		Made in Barbados 🇧🇧 Copyright © 2020-2021 Michael Rhodes
 
 		The image is not loaded until visible in viewport
 

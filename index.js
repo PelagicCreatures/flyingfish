@@ -6,7 +6,7 @@
 
 	@author Michael Rhodes
 	@license MIT
-	Made in Barbados 🇧🇧 Copyright © 2020 Michael Rhodes
+	Made in Barbados 🇧🇧 Copyright © 2020-2021 Michael Rhodes
 
 	The image is not loaded until visible in viewport
 
@@ -33,7 +33,7 @@
 import {
 	FlyingFish
 }
-from './lib/FlyingFish.js'
+	from './lib/FlyingFish.js'
 
 export {
 	FlyingFish

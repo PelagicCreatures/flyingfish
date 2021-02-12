@@ -9,7 +9,7 @@ Sargasso class that implements lazy loaded images using background-image css pro
 ```
 @author Michael Rhodes
 @license MIT
-Made in Barbados 🇧🇧 Copyright © 2020 Michael Rhodes
+Made in Barbados 🇧🇧 Copyright © 2020-2021 Michael Rhodes
 ```
 
 The FlyingFish Sargasso class can be used on an IMG tag or any container that supports background-image style, usually a div.
@@ -49,7 +49,7 @@ Quick HTML example using CDN:
 </div>
 ```
 
-### Production: serve modules from your project
+### Serving modules from your project
 ```
 npm install @PelagicCreatures/Sargasso
 npm install @PelagicCreatures/FlyingFish
