@@ -37,7 +37,7 @@ Quick HTML example using CDN:
 <script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/sargasso/dist/sargasso.iife.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/flyingfish/dist/flyingfish.iife.js'></script>
 <script defer>
-  PelagicCreatures.Sargasso.utils.bootSargasso()
+  PelagicCreatures.utils.bootSargasso()
 </script>
 
 <p>Image tag</p>
