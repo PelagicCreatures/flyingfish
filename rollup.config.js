@@ -11,7 +11,7 @@ export default {
 		name: 'PelagicCreatures.FlyingFish',
 		file: './dist/flyingfish.iife.js',
 		globals: {
-			'@pelagiccreatures/sargasso': 'PelagicCreatures.Sargasso'
+			'@pelagiccreatures/sargasso': 'PelagicCreatures'
 		},
 		sourcemap: true
 	}],

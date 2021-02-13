@@ -103,5 +103,5 @@ this.PelagicCreatures.FlyingFish = (function (exports, sargasso) {
 
 	return exports;
 
-}({}, PelagicCreatures.Sargasso));
+}({}, PelagicCreatures));
 //# sourceMappingURL=flyingfish.iife.js.map
