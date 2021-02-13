@@ -1,5 +1,4 @@
-this.PelagicCreatures = this.PelagicCreatures || {};
-this.PelagicCreatures.FlyingFish = (function (exports, sargasso) {
+var FlyingFishModule = (function (exports, sargasso) {
 	'use strict';
 
 	/* 	Made in Barbados 🇧🇧 Copyright © 2020-2021 Michael Rhodes */
@@ -103,5 +102,4 @@ this.PelagicCreatures.FlyingFish = (function (exports, sargasso) {
 
 	return exports;
 
-}({}, PelagicCreatures));
-//# sourceMappingURL=flyingfish.iife.js.map
+}({}, SargassoModule));

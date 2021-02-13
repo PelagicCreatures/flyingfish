@@ -1,6 +1,10 @@
 import commonjs from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
+import {
+	terser
+}
+	from 'rollup-plugin-terser'
 
 export default {
 	input: './index.js',
@@ -8,11 +12,23 @@ export default {
 
 	output: [{
 		format: 'iife',
-		name: 'PelagicCreatures.FlyingFish',
+		name: 'FlyingFishModule',
 		file: './dist/flyingfish.iife.js',
 		globals: {
-			'@pelagiccreatures/sargasso': 'PelagicCreatures'
+			'@pelagiccreatures/sargasso': 'SargassoModule'
+		}
+	}, {
+		format: 'iife',
+		name: 'FlyingFishModule',
+		file: './dist/flyingfish.iife.min.js',
+		globals: {
+			'@pelagiccreatures/sargasso': 'SargassoModule'
 		},
+		plugins: [terser({
+			output: {
+				comments: false
+			}
+		})],
 		sourcemap: true
 	}],
 
