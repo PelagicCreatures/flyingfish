@@ -30,7 +30,7 @@ Quick HTML example using CDN:
     optional classes for placeholder style and loading effects.
     .flying-fish-loaded is added to element when image is loaded
   */
-  .flying-fish { opacity:0; transition: opacity .3s; background: linear-gradient(#eee, #fff); }
+  .flying-fish { opacity:0; transition: opacity .3s; }
   .flying-fish-loaded { opacity: 1; }
 </style>
 
@@ -41,13 +41,15 @@ Quick HTML example using CDN:
 </script>
 
 <p>Image tag</p>
-<img data-sargasso-class="FlyingFish" data-src="/path-to-image.jpg" class="flying-fish">
+<img data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg" class="flying-fish">
 
 <p>Responsive background image</p>
 <div class="my-container">
-  <div class="my-responsive-image flying-fish" data-sargasso-class="FlyingFish" data-src="/path-to-image.jpg"></div>
+  <div class="my-responsive-image flying-fish" data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg"></div>
 </div>
 ```
+
+Note: The image has to be served over http(s)
 
 ### Serving modules from your project
 ```
