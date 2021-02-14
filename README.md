@@ -4,7 +4,7 @@
 
 [Demo Page](https://blog.PelagicCreatures.com/demos/flyingfish)
 
-Sargasso class that implements lazy loaded images using background-image css properties which always fits image within its container's dimensions or the src attribute on an IMG tag. Image is loaded in a web worker and the DOM is updated in an Animation Frame for optimal performance.
+Sargasso class that implements lazy loaded images using background-image css properties or the src attribute on an IMG tag. Image is loaded using a web worker and the DOM is updated in an Animation Frame for optimal performance.
 
 ```
 @author Michael Rhodes
