@@ -16,37 +16,43 @@ The FlyingFish Sargasso class can be used on an IMG tag or any container that su
 
 Quick HTML example using CDN:
 ```html
-<style>
-  .my-container { width: 30vw; height: 30vh; }
-  .my-responsive-image {
-    width:100%;
-    height:100%;
-    background-size: contain; /* note: to make image crop to fill the frame use: cover; */
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .my-container { width: 30vw; height: 30vh; margin-top: 150vh;}
+    .my-responsive-image {
+      width:100%;
+      height:100%;
+      background-size: contain; /* note: to make image crop to fill the frame use: cover; */
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
 
-  /*
-    optional classes for placeholder style and loading effects.
-    .flying-fish-loaded is added to element when image is loaded
-  */
-  .flying-fish { opacity:0; transition: opacity .3s; }
-  .flying-fish-loaded { opacity: 1; }
-</style>
+    /* optional classes for placeholder style and loading effects.
+      .flying-fish-loaded is added to element when image is loaded */
+    .flying-fish { opacity:0; transition: opacity .3s; }
+    .flying-fish-loaded { opacity: 1; }
+  </style>
+</head>
+<body>
+  <script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/sargasso/dist/sargasso.iife.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/flyingfish/dist/flyingfish.iife.js'></script>
+  <script defer>
+    window.onload= () => {
+      SargassoModule.utils.bootSargasso()
+    }
+  </script>
 
-<script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/sargasso/dist/sargasso.iife.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/flyingfish/dist/flyingfish.iife.js'></script>
-<script defer>
-  SargassoModule.utils.bootSargasso()
-</script>
+  <p>Image tag</p>
+  <img data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg" class="flying-fish">
 
-<p>Image tag</p>
-<img data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg" class="flying-fish">
-
-<p>Responsive background image</p>
-<div class="my-container">
-  <div class="my-responsive-image flying-fish" data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg"></div>
-</div>
+  <p>Responsive background image</p>
+  <div class="my-container">
+    <div class="my-responsive-image flying-fish" data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg"></div>
+  </div>
+</body>
+</html>
 ```
 
 Note: The image has to be served over http(s)
