@@ -55,7 +55,7 @@ Quick HTML example using CDN:
 </html>
 ```
 
-Note: The image has to be served over http(s)
+**Note**: *The image has to be served over http(s)*
 
 ### Serving modules from your project
 ```
@@ -100,6 +100,9 @@ export {
 html
 ```html
 <!DOCTYPE html>
+<html>
+	<head>
+	</head>
   <body>
     <img data-jsclass="FlyingFish" data-src="/some-image.jpg">
     <script src="public/dist/js/userapp.iife.js" defer></script>
