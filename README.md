@@ -36,24 +36,37 @@ Quick HTML example using CDN:
   </style>
 </head>
 <body>
+  <p>
+    Scroll Down to load images below the fold
+  </p>
+
+  <div class="my-container">
+    <p>Image tag</p>
+    <img data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg" class="flying-fish">
+  </div>
+
+  <p>
+    Scroll more.
+  </p>
+
+  <div class="my-container">
+    <p>Responsive background image</p>
+    <div class="my-responsive-image flying-fish" data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg"></div>
+  </div>
+
   <script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/sargasso/dist/sargasso.iife.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/@pelagiccreatures/flyingfish/dist/flyingfish.iife.js'></script>
+
   <script defer>
-    window.onload= () => {
+    window.onload = () => {
       SargassoModule.utils.bootSargasso()
     }
   </script>
-
-  <p>Image tag</p>
-  <img data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg" class="flying-fish">
-
-  <p>Responsive background image</p>
-  <div class="my-container">
-    <div class="my-responsive-image flying-fish" data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg"></div>
-  </div>
 </body>
 </html>
 ```
+
+[Try It](https://jsfiddle.net/PelagicCreatures/0m5pfkws/7/)
 
 **Note**: *The image has to be served over http(s)*
 
@@ -101,8 +114,8 @@ html
 ```html
 <!DOCTYPE html>
 <html>
-	<head>
-	</head>
+  <head>
+  </head>
   <body>
     <img data-jsclass="FlyingFish" data-src="/some-image.jpg">
     <script src="public/dist/js/userapp.iife.js" defer></script>
