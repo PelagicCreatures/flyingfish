@@ -28,6 +28,8 @@ Quick HTML example using CDN:
       background-position: center center;
     }
 
+		img { height: 30vh; }
+
     /* optional classes for placeholder style and loading effects.
       .flying-fish-loaded class is added to element when image is loaded
       so in this example the images quickly fades in once loaded.
