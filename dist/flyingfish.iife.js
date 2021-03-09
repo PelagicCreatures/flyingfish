@@ -82,6 +82,8 @@ var FlyingFishModule = (function (exports, sargasso) {
 
 	exports.FlyingFish = FlyingFish;
 
+	Object.defineProperty(exports, '__esModule', { value: true });
+
 	return exports;
 
 }({}, SargassoModule));

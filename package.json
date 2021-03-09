@@ -2,7 +2,8 @@
 	"name": "@pelagiccreatures/flyingfish",
 	"version": "1.0.5",
 	"description": "Sargasso Lazy Loading Images using web workers",
-	"main": "index.js",
+	"type": "module",
+	"browser": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "npx rollup --no-treeshake -c rollup.config.js"
@@ -18,19 +19,19 @@
 	},
 	"homepage": "https://github.com/PelagicCreatures/flyingfish#readme",
 	"devDependencies": {
-		"@rollup/plugin-commonjs": "^15.0.0",
+		"@rollup/plugin-commonjs": "^17.1.0",
 		"@rollup/plugin-json": "^4.1.0",
-		"@rollup/plugin-node-resolve": "^9.0.0",
-		"eslint": "^7.9.0",
-		"eslint-config-standard": "^14.1.1",
-		"eslint-plugin-import": "^2.22.0",
+		"@rollup/plugin-node-resolve": "^11.2.0",
+		"eslint": "^7.21.0",
+		"eslint-config-standard": "^16.0.2",
+		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-standard": "^4.0.1",
-		"rollup": "^2.27.1",
+		"eslint-plugin-promise": "^4.3.1",
+		"eslint-plugin-standard": "^5.0.0",
+		"rollup": "^2.41.0",
 		"rollup-plugin-terser": "^7.0.2"
 	},
 	"dependencies": {
-		"@pelagiccreatures/sargasso": "^1.4.6"
+		"@pelagiccreatures/sargasso": "^1.4.8"
 	}
 }
