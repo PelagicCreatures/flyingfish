@@ -1,18 +1,17 @@
-# @pelagiccreatures/flyingfish
+# [@pelagiccreatures/flyingfish](https://www.npmjs.com/package/@pelagiccreatures/flyingfish)
 
 ### Sargasso supervised Lazy Loaded Images
 
-[Demo Page](https://blog.PelagicCreatures.com/demos/flyingfish)
+Sargasso subclass that implements lazy loaded images for background-image css or the src attribute for an IMG tag. For optimal performance, the image is loaded using a web worker and the DOM is updated in Animation Frame updates.
 
-Sargasso class that implements lazy loaded images using background-image css properties or the src attribute on an IMG tag. Image is loaded using a web worker and the DOM is updated in an Animation Frame for optimal performance.
-
+FlyingFish works as a standalone image loader on any page or as part of the [@pelagiccreatures/sargasso](https://www.npmjs.com/package/@pelagiccreatures/sargasso) framework.
 ```
 @author Michael Rhodes
 @license MIT
 Made in Barbados 🇧🇧 Copyright © 2020-2021 Michael Rhodes
 ```
 
-The FlyingFish Sargasso class can be used on an IMG tag or any container that supports background-image style, usually a div.
+The FlyingFish Sargasso class can be used on an IMG tag or any container that supports background-image style.
 
 Quick HTML example using CDN:
 ```html
@@ -30,8 +29,10 @@ Quick HTML example using CDN:
     }
 
     /* optional classes for placeholder style and loading effects.
-      .flying-fish-loaded is added to element when image is loaded */
-    .flying-fish { opacity:0; transition: opacity .3s; }
+      .flying-fish-loaded class is added to element when image is loaded
+      so in this example the images quickly fades in once loaded.
+      */
+    .flying-fish { opacity: 0; transition: opacity .3s; }
     .flying-fish-loaded { opacity: 1; }
   </style>
 </head>
@@ -66,7 +67,7 @@ Quick HTML example using CDN:
 </html>
 ```
 
-[Try It](https://jsfiddle.net/PelagicCreatures/0m5pfkws/7/)
+[Try It](https://stackblitz.com/edit/sargasso-flyingfish)
 
 **Note**: *The image has to be served over http(s)*
 
@@ -165,7 +166,9 @@ export default {
     terser({
       output: {
         comments: false
-      }
+      },
+      keep_classnames: true,
+      keep_fnames: true
     })
   ]
 }
