@@ -49,6 +49,7 @@ var FlyingFishModule = (function (exports, sargasso) {
 						this.element.style.backgroundImage = 'url(' + this.blobURL + ')';
 					}
 					this.addClass('flying-fish-loaded');
+					this.element.dispatchEvent(new CustomEvent('sargasso-flying-fish-loaded'));
 					this.sleep(); // We're done. That was easy.
 				};
 				this.queueFrame(frame);
