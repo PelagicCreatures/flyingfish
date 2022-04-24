@@ -87,4 +87,4 @@ var FlyingFishModule = (function (exports, sargasso) {
 
 	return exports;
 
-}({}, SargassoModule));
+})({}, SargassoModule);
