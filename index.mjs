@@ -15,7 +15,7 @@
 import {
 	FlyingFish
 }
-	from './lib/FlyingFish.js'
+	from './lib/FlyingFish'
 
 export {
 	FlyingFish
