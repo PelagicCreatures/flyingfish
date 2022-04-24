@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    .my-container { width: 100vw; height: 66vh; margin-top: 150vh;}
-    .my-responsive-image {
-      display:block;
-      width:100%;
-      height:100%;
-      background-size: contain; /* note: to make image crop to fill the frame use: cover; */
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
+	<style>
+		.my-container { width: 100vw; height: 66vh; margin-top: 150vh;}
+		.my-responsive-image {
+			display:block;
+			width:100%;
+			height:100%;
+			background-size: contain; /* note: to make image crop to fill the frame use: cover; */
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
 
 		img { height: 30vh; }
 
-    /* optional classes for placeholder style and loading effects.
-      .flying-fish-loaded class is added to element when image is loaded
-      so in this example the images quickly fades in once loaded.
-      */
-    .flying-fish { opacity:0; transition: opacity .3s; }
-    .flying-fish-loaded { opacity: 1; }
-  </style>
+		/* optional classes for placeholder style and loading effects.
+			.flying-fish-loaded class is added to element when image is loaded
+			so in this example the images quickly fades in once loaded.
+			*/
+		.flying-fish { opacity:0; transition: opacity .3s; }
+		.flying-fish-loaded { opacity: 1; }
+	</style>
 </head>
 <body>
-  <p>
-    Scroll Down to load images below the fold
-  </p>
+	<p>
+		Scroll Down to load images below the fold
+	</p>
 
-  <div class="my-container">
-    <p>Image tag</p>
-    <img data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg" class="flying-fish">
-  </div>
+	<div class="my-container">
+		<p>Image tag</p>
+		<img data-sargasso-class="FlyingFish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg" class="flying-fish">
+	</div>
 
-  <p>
-    Scroll more.
-  </p>
+	<p>
+		Scroll more.
+	</p>
 
-  <div class="my-container">
-    <p>Responsive background image</p>
-    <sargasso-flying-fish class="my-responsive-image flying-fish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg"></sargasso-flying-fish>
-  </div>
+	<div class="my-container">
+		<p>Responsive background image</p>
+		<sargasso-flying-fish class="my-responsive-image flying-fish" data-src="https://raw.githubusercontent.com/PelagicCreatures/flyingfish/master/test.jpg"></sargasso-flying-fish>
+	</div>
 
-  <script src='./local/sargasso.iife.js'></script>
-  <script src='./dist/flyingfish.iife.js'></script>
-
-  <script defer>
-    window.onload = () => {
-      SargassoModule.utils.bootSargasso()
-    }
-  </script>
+	<script async src="https://unpkg.com/es-module-shims@0.13.1/dist/es-module-shims.js"></script>
+	<script type="importmap">
+	{
+		"imports": {
+			"@pelagiccreatures/sargasso": "https://unpkg.com/@pelagiccreatures/sargasso@2.0.0/dist/sargasso.mjs",
+			"@pelagiccreatures/flyingfish": "/dist/flyingfish.mjs"
+		}
+	}
+	</script>
+	<script type="module">
+		import { utils } from "@pelagiccreatures/sargasso"
+		import { FlyingFish } from "@pelagiccreatures/flyingfish"
+		window.onload = () => {
+			utils.bootSargasso()
+		}
+	</script>
 </body>
 </html>
